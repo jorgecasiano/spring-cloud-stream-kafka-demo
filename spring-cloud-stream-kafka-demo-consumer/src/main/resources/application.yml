@@ -1,0 +1,23 @@
+server:
+  port: 9081
+
+logging:
+  level:
+    com.kas7ux: INFO
+
+spring:
+  application:
+    name: spring-cloud-stream-kafka-demo-consumer
+  cloud:
+    function:
+      definition: consumer;processor
+    stream:
+      bindings:
+        processor-out-0:
+          destination: process-events
+        processor-in-0:
+          destination: message-events
+          group: ${spring.application.name}
+        consumer-in-0:
+          destination: process-events
+          group: ${spring.application.name}

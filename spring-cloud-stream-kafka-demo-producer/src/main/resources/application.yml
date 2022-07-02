@@ -1,0 +1,17 @@
+server:
+  port: 9080
+
+logging:
+  level:
+    com.kas7ux: INFO
+
+spring:
+  application:
+    name: spring-cloud-stream-kafka-demo-producer
+  cloud:
+    stream:
+      poller:
+        fixed-delay: 5000
+      bindings:
+        producer-out-0:
+          destination: message-events
