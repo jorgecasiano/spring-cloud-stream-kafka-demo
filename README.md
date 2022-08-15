@@ -1,9 +1,14 @@
 # spring-cloud-stream-kafka-demo
 Spring kafka streams with functional style.
 
-Download and install kafka https://kafka.apache.org/quickstart#quickstart_download.
+Run docker compose and applications:
 
-Produce events every 5 seconds (configured on spring.cloud.stream.poller.fixed-delay).
+```console
+> docker compose up -d
+> mvn clean
+> mvn -f spring-cloud-stream-kafka-demo-producer/pom.xml exec:java -Dexec.mainClass="producer.SpringCloudKafkaDemoProducerApplication"
+> mvn -f spring-cloud-stream-kafka-demo-consumer/pom.xml exec:java -Dexec.mainClass="consumer.SpringCloudKafkaDemoConsumerApplication"
+```
 
 Produce events with endpoint:
 
